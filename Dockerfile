@@ -29,7 +29,7 @@ COPY workflow_api.json /workspace/workflow_api.json
 RUN pip install "numpy<2"
 
 # 强行升级 PyTorch 核心引擎以支持最新的 14B 视频加速包
-RUN pip install "torch>=2.4.0" torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121
+RUN pip install "torch>=2.4.0" torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
 
 WORKDIR /workspace
 CMD ["python", "-u", "handler.py"]
