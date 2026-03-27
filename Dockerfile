@@ -20,6 +20,7 @@ RUN git clone https://github.com/kijai/ComfyUI-KJNodes.git
 WORKDIR /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper
 RUN pip install -r requirements.txt
 RUN pip install runpod requests
+RUN pip install imageio-ffmpeg onnx
 
 # 把我们的图纸和大脑装进集装箱
 COPY handler.py /workspace/handler.py
