@@ -146,7 +146,7 @@ nvidia-nccl-cu12==2.20.5
 nvidia-nvjitlink-cu12==12.4.99
 nvidia-nvtx-cu12==12.4.99
 oauthlib==3.2.0
-onnxruntime-gpu==1.24.4
+onnxruntime-gpu
 opencv-python==4.13.0.92
 opencv-python-headless==4.13.0.92
 overrides==7.7.0
