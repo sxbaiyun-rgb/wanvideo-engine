@@ -10,8 +10,11 @@ RUN pip uninstall torch torchvision torchaudio -y \
     && pip install "numpy<2.0.0" \
     && pip install torchsde imageio-ffmpeg sageattention onnx opencv-python-headless rotary-embedding-torch
 
-# 4. 将您的其他“黄金基因”复制进镜像
+# 4. 【致命遗漏修复：安全注入 OmniVoice 本体】必须使用 --no-deps，防止其恶意篡改底层 GPU 驱动！
+RUN pip install --no-deps omnivoice
+
+# 5. 将您的其他“黄金基因”复制进镜像
 COPY requirements.txt /requirements.txt
 
-# 5. 让镜像在打包时，一次性把剩余依赖全装好
+# 6. 让镜像在打包时，一次性把剩余依赖全装好
 RUN pip install --no-cache-dir -r /requirements.txt
