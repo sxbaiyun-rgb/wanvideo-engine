@@ -1,8 +1,8 @@
 # 1. 采用 RunPod 官方的 PyTorch 底座
 FROM runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04
 
-# 2. 安装处理音视频必备的底层系统组件
-RUN apt-get update && apt-get install -y ffmpeg git wget libgl1-mesa-glx
+# 2. 安装处理音视频必备的底层系统组件 (AIDC V6.0: 已注入 libsndfile1 核心音频驱动)
+RUN apt-get update && apt-get install -y ffmpeg git wget libgl1-mesa-glx libsndfile1
 
 # 3. 【核心进化：5090 满血驱动】先卸载自带的老旧版本，再强制打入适配 50系最新架构的 CUDA 12.8 (cu128) 引擎！
 RUN pip uninstall torch torchvision torchaudio -y \
