@@ -214,3 +214,9 @@ websocket-client==1.8.0
 widgetsnbextension==4.0.13
 yarl==1.23.0
 zipp==1.0.0
+soundfile
+gradio
+librosa
+pydub
+tensorboardx
+webdataset
